@@ -1,0 +1,3 @@
+name: SwordData
+version: '${project.version}'
+main: me.humandavey.sworddata.SwordData
