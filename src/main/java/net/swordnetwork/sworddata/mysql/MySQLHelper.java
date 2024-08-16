@@ -1,4 +1,4 @@
-package me.humandavey.sworddata.mysql;
+package net.swordnetwork.sworddata.mysql;
 
 import java.sql.*;
 import java.util.Optional;
@@ -7,15 +7,13 @@ import java.util.UUID;
 public class MySQLHelper implements AutoCloseable {
 
     private final Connection connection;
-    private final String table;
+    private final String table = "sword_data";;
 
     public MySQLHelper(String host, int port, String databaseName, String username, String password) throws SQLException {
         String url = "jdbc:mysql://" + host + ":" + port + "/" + databaseName;
         connection = DriverManager.getConnection(url, username, password);
 
-        this.table = "sword_data";
-
-        // TODO: Check if table exists, if not make it (dbsetup.sql)
+        query("CREATE TABLE IF NOT EXISTS " + table + " (uuid UUID64, data JSON)");
     }
 
     public boolean doesPlayerExist(UUID uuid) {

@@ -1,6 +1,6 @@
-package me.humandavey.sworddata;
+package net.swordnetwork.sworddata;
 
-import me.humandavey.sworddata.mysql.MySQLHelper;
+import net.swordnetwork.sworddata.mysql.MySQLHelper;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
 import net.md_5.bungee.config.ConfigurationProvider;
