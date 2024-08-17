@@ -68,6 +68,10 @@ public final class SwordData extends Plugin {
         }
     }
 
+    public MySQLHelper getHelper() {
+        return helper;
+    }
+
     public Configuration getConfig() {
         return config;
     }
